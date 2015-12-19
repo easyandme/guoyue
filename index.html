@@ -4,28 +4,26 @@
 	<meta charset="utf-8">
 	<meta name="author" content="Maxim_Xu">
 	<meta http-equiv="Cache-Control" content="no-transform">
-	<meta name="keywords" content="Roland,RolandMusic,Roland Music Quotient,乐商,音商,测试">
+	<meta name="keywords" content="国乐,乐商,音商,测试">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<link rel="shortcut icon" type="image/png" href="./images/fav.png"/>
-	<title>罗兰音乐商数测试</title>
+	<title>国乐版音商测试</title>
 	<link rel="stylesheet" href="./bootstrap.min.css">
 	<link rel="stylesheet" href="./main.css">
 	</head>
 <body class="fadeIn animated noHover">
     <div style="margin:0 auto;display:none;">
-    <img alt="share" src="./images/CD2.png"/></div>
-    <audio hidden preload id="start_audio" src="./audios/t.mp3"></audio>
-    <p class='slogan'>世界电声乐器领导品牌<img alt='logo' src='./images/logo.png' />友情赞助</p>
+    <img alt="share" src="./images/CD2.png"/></div> 
+    <p class='slogan'>本测试由秦筝音乐(微信：guzheng169)制作</p>
 	<div id="start">
 	    <div class="wrapper">  
+	           <img alt="title" width="40" src="./images/title.png" />
 	        <div class="prelude">
 	           <div class="intro_text">
-	           <p>还在扯智商情商？测测你音商多少！本测试由Roland冠名赞助，lovequiz工作室制作。</p> <br>
-	           <p>建议戴耳机进行，如果点击播放后没有声音可能是由于开启了静音或网速不佳，建议在Wi-Fi环境下测试。</p>
+	           <p>建议在Wi-Fi环境下测试<br>佩戴耳机听题效果更好</p>
 	           </div>
-		       <button class="btn btn-lg btn-success" id="test_btn">测试音量</button> 
 	           <p class="text_2">测试中每道题最多可播放两遍，中途不可暂停。</p>
-		       <button class="btn btn-lg btn-success" id="start_btn">开始测试</button>
+		       <button class="btn btn-lg btn-success" id="start_btn"></button>
 	        </div>
 	        <div hidden class="quiz">
 	        	<div class="quiz_text">
@@ -36,10 +34,9 @@
 	        	</div>
 	        	<p class="intro">点击<img alt="triangle" class="pointer" src="./images/triangle.png" />播放</p>
 	        	<div class="choices">
-	        		<button data-choice="A" id="choiceA" class="choice" disabled="disabled">越来越快</button><br>
-					<button data-choice="B" id="choiceB" class="choice" disabled="disabled">没有变化</button><br>
-					<button data-choice="C" id="choiceC" class="choice" disabled="disabled"></button><br>
-					<button data-choice="D" id="choiceD" class="choice" disabled="disabled"></button>
+	        		<button data-choice="A" id="choiceA" class="choice" disabled="disabled">忧伤的</button><br>
+					<button data-choice="B" id="choiceB" class="choice" disabled="disabled">喜悦的</button><br>
+					<button data-choice="C" id="choiceC" class="choice" disabled="disabled">平静的</button><br> 
 	        	</div>
 	        </div>
 	        <div class="result">
@@ -47,52 +44,53 @@
 	        		<p>测试结果</p>
 	        	</div>
 	        	<div class="result_yours">
-	        	    <p>你的音乐商数是:</p>
-	        		<p class="final">牛逼</p>
+	        	    <p>你的国乐等级是:</p>
+	        		<p class="final">乐盲</p>
 	        	</div>
 	        	<div class="percent">
-	        		<p class="what">击败全球 <span id="final_perc">95%</span> 的测试者</p>
+	        		<p class="what">击败全国 <span id="final_perc">95%</span> 的测试者</p>
 	        	</div>
 	        	<div class="tags">
-	        		<div class="tag1 tag">
-	        			<p>节奏感</p>
+	        		<div style="margin-right:-13px;" class="tag1 tag">
+	        			<p>感受力</p>
 	        			<label class="a1">渣渣</label>
 	        			<label class="a2">不错</label>
 	        			<label class="a3">牛逼</label>
 	        		</div>
-	        		<div class="tag2 tag">
-	        			<p>感受力</p>
+	        		<div style="margin-right:-13px;" class="tag2 tag">
+	        			<p>节奏感</p>
 	        			<label class="b1">渣渣</label>
 	        			<label class="b2">不错</label>
 	        			<label class="b3">牛逼</label>
 	        		</div>
 	        		<div class="tag3 tag">
-	        			<p>记忆力</p>
+	        			<p>音乐记忆</p>
 	        			<label class="c1">渣渣</label>
 	        			<label class="c2">不错</label>
 	        			<label class="c3">牛逼</label>
 	        		</div>
 	        		<div class="tag4 tag">
-	        			<p>判断力</p>
+	        			<p>音乐知识</p>
 	        			<label class="d1">渣渣</label>
 	        			<label class="d2">不错</label>
 	        			<label class="d3">牛逼</label>
 	        		</div>
-	        		<div class="tag5 tag">
+	        		<div hidden class="tag5 tag">
 	        			<p>音乐知识</p>
 	        			<label class="e1">渣渣</label>
 	        			<label class="e2">不错</label>
 	        			<label class="e3">牛逼</label>
 	        		</div>
 	        	</div>
-	        	<button id="share" class="btn btn-lg share">开发者</button>
-	        	<button id="follow" class="btn btn-lg follow">关注罗兰</button>
+	        	<p hidden class="share_txt">分享给朋友<br>晒晒成绩</p>
+	        	<button id="share" class="btn btn-lg share">晒晒成绩</button>
+	        	<button id="follow" class="btn btn-lg follow">关注秦筝</button>
 	        </div>
 	    </div>
 	</div>
+	<img hidden alt="guitar" src="./images/guitar.png" />
 	<img hidden alt="developer" width="80" src="./images/me.jpg" /> 
-	<img hidden alt="QR" width="80" src="./images/QR.jpg" />
-	<img hidden alt="des" width="250" src="./images/des.jpg" />
+	<img hidden alt="QR" width="80" src="./images/QR.jpg" /> 
 	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
 	<script type="text/javascript" src="js/fastclick.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
@@ -102,7 +100,7 @@
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-68397460-2', 'auto');
+  ga('create', 'UA-38451886-4', 'auto');
   ga('send', 'pageview');
 </script>
 <script type='text/javascript'>

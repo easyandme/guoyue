@@ -1,28 +1,34 @@
 [
   {
-    "describe": "<b>这段音乐的节奏变化是？</b>",
+    "describe": "<b>下面这段音乐表现了怎样的情绪？</b>",
     "music": "<audio hidden preload class='songs' id='song' src='audios/a.mp3'></audio>",
-    "genre": "rhythm",
+    "genre": "sense",
     "A": { 
-      "describe": "越来越快"
+      "describe": "忧伤的"
     },
     "B": {
-      "describe": "没有变化",
+      "describe": "喜悦的",
       "bonus": 10,
-      "r_score": 1
-    } 
+      "sense_score": 1
+    },
+    "C": {
+      "describe": "平静的"
+    }
   },
   {
-    "describe": "<b>这段音乐的速度是否有变化？</b>",
+    "describe": "<b>这段音乐最能体现哪种生活场景？</b>",
     "music": "<audio hidden preload class='songs' id='song' src='audios/b.mp3'></audio>",
-    "genre": "rhythm",
+    "genre": "sense",
     "A": {
-      "describe": "越来越快"
+      "describe": "山岭晨曦",
+      "bonus": 10,
+      "sense_score": 1	
     },
     "B": {  
-      "describe": "没有变化",
-      "bonus": 10,
-      "r_score": 1
+      "describe": "月夜湖边"
+    },
+    "C": {
+      "describe": "夕阳西下"
     } 
   },
   {
@@ -30,103 +36,77 @@
     "music": "<audio hidden preload class='songs' id='song' src='audios/c.mp3'></audio>",
     "genre": "sense",
     "A": {
-      "describe": "<span style='font-size:3em;line-height:20px;margin-left:30px;'>&#9632;&#9632;&#9632;</span>"
+      "describe": "<span style='font-size:3em;line-height:20px;margin-left:30px;'>&#9633;&#9633;&#9633;</span>"
     },
     "B": {
-      "describe": "<span style='font-size:3em;line-height:20px;margin-left:30px;'><span style='position:absolute;top:0'>&#9632;</span><span style='position:absolute;left:82px;top:10px'>&#9632;</span><span style='position:absolute;left:109px;top:20px;'>&#9632;</span></span>",
+      "describe": "<span style='font-size:2em;line-height:20px;margin-left:30px;'><span style='position:absolute;top:12px'>&#9651;</span><span style='position:absolute;left:82px;top:12px'>&#9651;</span><span style='position:absolute;left:109px;top:12px;'>&#9651;</span></span>",
       "bonus": 10,
       "sense_score": 1
     },
     "C": { 
-      "describe": "<span style='font-size:3em;line-height:20px;margin-left:30px;'>&#9632;&#9632;<span style='position:absolute;top:0'>&#9632;</span></span>"
+      "describe": "<span style='font-size:3em;line-height:20px;margin-left:30px;'>&#9675;&#9675;&#9675;</span>"
     }
   },
   {
-    "describe": "<b>选出下面最能表达这个音乐片段的图形</b>",
+    "describe": "<b>这段音乐的节奏变化是？</b>",
     "music": "<audio hidden preload class='songs' id='song' src='audios/d.mp3'></audio>",
-    "genre": "sense",
+    "genre": "rhythm",
     "A": {
-      "describe": "<span style='font-size:3em;line-height:20px;'>&#9632;&#9632;&#9632;&#9632;<span style='position:absolute;top:0'>&#8211;</span><span style='position:absolute;left:160px'>&#9632;</span></span>",
+      "describe": "没有变化",
       "bonus": 10,
-      "sense_score": 1
+      "r_score": 1
     },
     "B": { 
-      "describe": "<span style='font-size:3em;line-height:20px;'>&#9632;&#9632;&#9632;&#9632;<span style='position:absolute;top:10px'>&#8211;</span><span style='position:absolute;left:160px'>&#9632;</span></span>"
+      "describe": "越来越快"
     },
     "C": {
-      "describe": "<span style='font-size:3em;line-height:20px;'>&#9632;&#9632;&#9632;&#9632;<span style='position:absolute;top:20px'>&#8211;</span><span style='position:absolute;left:160px'>&#9632;</span></span>"
+      "describe": "越来越慢"
     }
   },
   {
-    "describe": "<b>这段音乐表达的情绪是？</b>",
-    "music": "<audio hidden preload class='songs' id='song' src='audios/i.mp3'></audio>",
-    "genre": "decision",
-    "A": {
-      "describe": "紧张的",
-      "bonus": 10,
-      "decision_score": 1
-    },
-    "B": {
-      "describe": "忧伤的"
-    } 
-  },
-  {
-    "describe": "<b>这段音乐的感觉更偏向于？</b>",
-    "music": "<audio hidden preload class='songs' id='song' src='audios/j.mp3'></audio>",
-    "genre": "decision",
-    "A": {
-      "describe": "阳光沙滩",
-      "bonus": 10,
-      "decision_score": 1
-    },
-    "B": {
-      "describe": "浩瀚星空"
-    } 
-  },
-  {
-    "describe": "<b>这个用军鼓演奏的片段中，军鼓总共敲击了几下？</b>",
+    "describe": "<b>这段乐曲中的鼓点有几次？</b>",
     "music": "<audio hidden preload class='songs' id='song' src='audios/e.mp3'></audio>",
-    "genre": "memo",
+    "genre": "rhythm",
     "A": {
-      "describe": "10下"
-    },
-    "B": { 
-      "describe": "11下",
-      "bonus": 10,
-      "memo_score": 1
-    },
-    "C": {
-      "describe": "12下"
-    }
-  },
-  {
-    "describe": "<b>音频中的两个音乐片段是否完全相同？</b>",
-    "music": "<audio hidden preload class='songs' id='song' src='audios/f.mp3'></audio>",
-    "genre": "memo",
-    "A": {
-      "describe": "完全相同"
+      "describe": "8"
     },
     "B": {
-      "describe": "不同，节奏不一致"
-    },
-    "C": { 
-      "describe": "不同，音高不一致",
+      "describe": "9",
       "bonus": 10,
-      "memo_score": 1
-    }
+      "r_score": 1
+    },
+    "C": {
+      "describe": "10"
+    }  
   },
+  {
+    "describe": "<b>这段音乐的节奏变化是？</b>",
+    "music": "<audio hidden preload class='songs' id='song' src='audios/f.mp3'></audio>",
+    "genre": "rhythm",
+    "A": {
+      "describe": "越来越快"
+    },
+    "B": {
+      "describe": "越来越慢"
+    },
+    "C": {
+      "describe": "没有变化",
+      "bonus": 10,
+      "r_score": 1
+    }   
+  }, 
   {
     "describe": "<b>音频中的两个音乐片段是否完全相同？</b>",
     "music": "<audio hidden preload class='songs' id='song' src='audios/g.mp3'></audio>",
     "genre": "memo",
-    "A": { 
-      "describe": "完全相同"
+    "A": {
+      "describe": "完全一样"
     },
     "B": {
-      "describe": "不同，节奏不一致"
+      "describe": "节奏不同"
     },
-    "C": {
-      "describe": "不同，音高不一致",
+    "C": { 
+      "describe": "音高不同",
       "bonus": 10,
       "memo_score": 1
     }
@@ -139,70 +119,76 @@
       "describe": "完全相同"
     },
     "B": {
-      "describe": "不同，节奏不一致"
-    },
-    "C": {
-      "describe": "不同，音高不一致",
+      "describe": "节奏不同",
       "bonus": 10,
       "memo_score": 1
     },
-    "D": {
-      "describe": "节奏和音高都不同"
+    "C": {
+      "describe": "音高不同"
+    }
+  }, 
+  {
+    "describe": "<b>音频中的两个音乐片段是否完全相同？</b>",
+    "music": "<audio hidden preload class='songs' id='song' src='audios/i.mp3'></audio>",
+    "genre": "memo",
+    "A": { 
+      "describe": "完全相同",
+      "bonus": 10,
+      "memo_score": 1
+    },
+    "B": {
+      "describe": "节奏不同"
+    },
+    "C": {
+      "describe": "音高不同"
     }
   },
   {
-    "describe": "<b>这段乐曲是由吉他、架子鼓和什么乐器共同完成的？</b>",
+    "describe": "<b>这段乐曲中共出现了几种乐器？</b>",
+    "music": "<audio hidden preload class='songs' id='song' src='audios/j.mp3'></audio>",
+    "genre": "knowledge",
+    "A": {
+      "describe": "2"
+    },
+    "B": {
+      "describe": "3"
+    },
+    "C": {
+      "describe": "4",
+      "bonus": 10,
+      "knowledge_score": 1
+    }
+  },
+  {
+    "describe": "<b>下面这段音乐是由什么乐器演奏的？</b>",
     "music": "<audio hidden preload class='songs' id='song' src='audios/k.mp3'></audio>",
     "genre": "knowledge",
     "A": {
-      "describe": "合成器"
-    },
-    "B": {
-      "describe": "贝司",
-      "bonus": 10,
-      "knowledge_score": 1
-    }
-  },
-  {
-    "describe": "<b>这段乐曲的主旋律是由什么乐器完成的？</b>",
-    "music": "<audio hidden preload class='songs' id='song' src='audios/l.mp3'></audio>",
-    "genre": "knowledge",
-    "A": {
-      "describe": "吉他",
-      "bonus": 10,
-      "knowledge_score": 1
+      "describe": "三弦"
     },
     "B": { 
-      "describe": "贝司"
+      "describe": "古筝",
+      "bonus": 10,
+      "knowledge_score": 1
     },
     "C": {
-      "describe": "合成器"
+      "describe": "琵琶"
     }
   },
   {
-    "describe": "<b>这段音乐的风格是？</b>",
-    "music": "<audio hidden preload class='songs' id='song' src='audios/m.mp3'></audio>",
+    "describe": "<b>听听下面这段古筝音乐属于哪个筝派风格？</b>",
+    "music": "<audio hidden preload class='songs' id='song' src='audios/l.mp3'></audio>",
     "genre": "knowledge",
     "A": { 
-      "describe": "乡村音乐"
-    },
-    "B": {
-      "describe": "布鲁斯摇滚",
-      "bonus": 10,
-      "knowledge_score": 1
-    } 
-  },
-  {
-    "describe": "<b>这段音乐的风格是？</b>",
-    "music": "<audio hidden preload class='songs' id='song' src='audios/n.mp3'></audio>",
-    "genre": "knowledge",
-    "A": {
-      "describe": "爵士乐",
+      "describe": "陕西筝派",
       "bonus": 10,
       "knowledge_score": 1
     },
     "B": {
-      "describe": "古典音乐"
-    } 
-  } 
+      "describe": "山东筝派"
+    },
+    "C": { 
+      "describe": "河南筝派"
+    }
+  }
 ]

@@ -9,10 +9,10 @@ var q, k, m;
 var l = 0;
 var s = 0;
 var n = 1;
-var t = 15;
+var t = 13;
 var qar = [];
 var playN = 0;
-var rhythm = 0, sense = 0, memo = 0, deci = 0, know = 0;
+var rhythm = 0, sense = 0, memo = 0, know = 0;
 var r, w, x, y, z, o; 
 var isPlaying = false;
 
@@ -40,13 +40,12 @@ function addOverlay() {
 }
 
 function listen() { 
-  if (n !== 8 && n !== 9 && n !== 10) {
+ /* if (n !== 7 && n !== 8 && n !== 9) { */
   document.getElementById('song').onplaying = function() {
     setTimeout(function() {
       $('.choice').prop('disabled', false);
-    }, 2000);
-  }
-}
+    }, 1000);
+  } 
   document.getElementById('song').addEventListener('ended', function(){
     $('.play_btn>img').removeClass('spin begin');
     playN += 1;
@@ -63,23 +62,24 @@ function listen() {
 }
 
 $('#start_btn').click(function() {
-      $('.prelude, .slogan').fadeOut(500);
+      $('.prelude, .slogan, img[alt="title"]').fadeOut(500);
       $('#start').prepend(p);
       $('#progressbar').fadeIn(1000);
       setTimeout(function() {
       $('.quiz').fadeIn(500);
-      }, 1000)
+      }, 1000);
       first();
       $('#start_audio, .prelude').remove();
+      $('.wrapper').css({'border':'border: 2px solid #CAC5C5;','background-color':'#fdf3e9'});
 })
 
 $('.choice').click(function() {
       n += 1;
-      l += 50/7; 
+      l += 25/3; 
       $("#progressbar>div").css("width", l + "%");
       var u = $(this).attr("data-choice");
       o = q[k]; 
-      if (k < 14) {
+      if (k < 12) {
       m = o[u].bonus || 0;
       s += m; 
       r = o[u].r_score || 0;
@@ -87,12 +87,10 @@ $('.choice').click(function() {
       w = o[u].sense_score || 0;
       sense += w;
       x = o[u].memo_score || 0;
-      memo += x;
-      y = o[u].decision_score || 0;
-      deci += y;
+      memo += x; 
       z = o[u].knowledge_score || 0;
       know += z;  
-      $("#pg").text(k + 1 + "/14");
+      $("#pg").text(k + 1 + "/12");
       if ($('.quiz').hasClass('fadeInRight animated')) {$('.quiz').removeClass('fadeInRight animated')};
       if ($('.play_btn>img').hasClass('spin begin')) {$('.play_btn>img').removeClass('spin begin')};
       $('.quiz').addClass('fadeOutLeft animatedFast');
@@ -115,90 +113,68 @@ $('.choice').click(function() {
       $('.play_btn>img').attr('src','./images/CD.png');
       }, 200);
       playN = 0;
+      console.log(rhythm);
     }
-      if (n > 14) {
+      if (n > 12) {
       document.getElementById("song").pause();
         $('.quiz, #progressbar').remove();
         $('.result, .slogan').css('display', 'block').addClass('fadeInUp animatedSlow');
       var pretext = ''; 
       var perc, quotient, final_txt, middle;
-      if (s >= 130) {
+      if (s >= 100) {
         perc = 99;
+        quotient = '乐圣'
         middle = '竟有';
-        pretext = "莫扎特转世！！！";
-        final_txt = "！惊呆了天王老子...";
-      } else if ( s > 120 && s < 130) { 
-        perc = Math.floor(Math.random()*5) + 94;
+        pretext = "空前绝后！";
+        final_txt = "级别！你也来试试吧";
+      } else if ( s > 60 && s < 100) { 
+        perc = Math.floor(Math.random()*15) + 80;
         middle = '高达';
-        final_txt = "，已经不屑和你们比智商情商了...你也来测测吧"
-      } else if ( s > 110 && s <= 120) { 
-        perc = Math.floor(Math.random()*5) + 89;
-        middle = '高达';
-        final_txt = "，已经不屑和你们比智商情商了...你也来测测吧"
-      } else if ( s > 90 && s <= 110) { 
-        perc = Math.floor(Math.random()*10) + 79;
-        middle = '高达';
-        final_txt = "，只是没时间去参加我是歌手而已！...你也来测测吧"
-      } else if ( s > 70 && s <= 90) { 
-        perc = Math.floor(Math.random()*10) + 69;
-        middle = '是';
-        final_txt = "，也许拍片神马的更符合我的气质...你也来测测吧"
-      } else if ( s > 60 && s <= 80) { 
-        perc = Math.floor(Math.random()*30) + 49;
+        quotient = '乐师'
+        final_txt = "级，你也来试试吧！"
+      } else if ( s > 30 && s <= 60) { 
+        perc = Math.floor(Math.random()*30) + 50;
+        middle = '已足够成为';
+        quotient = '乐友'
+        final_txt = "，你也来试试吧！"
+      } else if ( s >= 0 && s <= 30) { 
+        pretext = '不意外！'
+        perc = Math.floor(Math.random()*10) + 20;
         middle = '只有';
-        final_txt = "？抱歉多年来折磨你们耳朵了...你也来测测吧"
-      } else { 
-        perc = Math.floor(Math.random()*30) + 9;
-        middle = '尼玛才';
-        final_txt = "？谁再让我学乐器我跟谁急..."
-      }
-        quotient = s + t;
+        quotient = '乐盲'
+        final_txt = "级...你也来试试吧！"
+      }  
         $('.percent').fadeIn(500);
         $('#final_perc').text(perc + '%');
-        $('.final').text(quotient).prop('counter', 0).animate({
-         counter: $('.final').text()
-      }, {
-        duration: 2000,
-        easing: "swing",
-        step: function(now) {
-            $(this).text(Math.ceil(now));
-          }
-      }); 
-      document.title = pretext + '我的音商' + middle + quotient + final_txt;
-      if (rhythm == 2) {
+        $('.final').text(quotient); 
+      document.title = pretext + '我的国乐造诣' + middle + quotient + final_txt;
+      if (sense == 3) {
         $('.a3').addClass('highlighted');
-      } else if (rhythm == 1) {
+      } else if (rhythm >= 1) {
         $('.a2').addClass('highlighted');  
       } else {
         $('.a1').addClass('highlighted');  
       }
-      if (sense == 2) {
+      if (rhythm == 3) {
         $('.b3').addClass('highlighted');
-      } else if (sense == 1) {
+      } else if (rhythm >= 1) {
         $('.b2').addClass('highlighted');  
       } else {
         $('.b1').addClass('highlighted');  
       }
-      if (memo >= 3) {
+      if (memo == 3) {
         $('.c3').addClass('highlighted');
-      } else if (memo > 1 && memo < 3) {
+      } else if (memo >= 1) {
         $('.c2').addClass('highlighted');  
       } else {
         $('.c1').addClass('highlighted');  
-      }
-      if (deci == 2) {
+      } 
+      if (know == 3) {
         $('.d3').addClass('highlighted');
-      } else if (deci == 1) {
+      } else if (know >= 1) {
         $('.d2').addClass('highlighted');  
       } else {
         $('.d1').addClass('highlighted');  
-      } 
-      if (know >= 3) {
-        $('.e3').addClass('highlighted');
-      } else if (know > 1) {
-        $('.e2').addClass('highlighted');  
-      } else {
-        $('.e1').addClass('highlighted');  
       }
     }
 });
@@ -220,7 +196,7 @@ setInterval(function(){
 }, 2500);
 
 /*All the appending stuff*/
-var p = "<div hidden id='progressbar'><div><span id='pg'>1/14</span></div></div></div>";
+var p = "<div hidden id='progressbar'><div><span id='pg'>1/12</span></div></div></div>";
  
 $.getJSON("data/data.json", function(e){
         $.extend(qar, e);
@@ -228,10 +204,10 @@ $.getJSON("data/data.json", function(e){
 
 $('.share').click(function() {
         addOverlay();   
-        $('img[alt="developer"],.share_txt').show();
+        $('img[alt="guitar"],.share_txt').show();
         $('#overlay').click(function() {
             $(this).remove(); 
-            $('img[alt="developer"],.share_txt').hide();
+            $('img[alt="guitar"],.share_txt').hide();
         });
 
 });
