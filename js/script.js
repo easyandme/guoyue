@@ -41,16 +41,16 @@ function addOverlay() {
 
 function listen() { 
  /* if (n !== 7 && n !== 8 && n !== 9) { */
-  document.getElementById('song').onplaying = function() {
+  /* document.getElementById('song').onplaying = function() {
     setTimeout(function() {
       $('.choice').prop('disabled', false);
     }, 1000);
-  } 
+  }  */
   document.getElementById('song').addEventListener('ended', function(){
     $('.play_btn>img').removeClass('spin begin');
     playN += 1;
     isPlaying = false;
-    $('.choice').prop('disabled', false);
+   /* $('.choice').prop('disabled', false); */
     if (playN > 1) {
       $('.play_btn>img').attr('src','./images/CDg.png');
       $('.intro').text('已播放2次，请作答');
@@ -94,7 +94,7 @@ $('.choice').click(function() {
       if ($('.quiz').hasClass('fadeInRight animated')) {$('.quiz').removeClass('fadeInRight animated')};
       if ($('.play_btn>img').hasClass('spin begin')) {$('.play_btn>img').removeClass('spin begin')};
       $('.quiz').addClass('fadeOutLeft animatedFast');
-      $('.choice').prop('disabled', true);
+     /* $('.choice').prop('disabled', true); */
       setTimeout(function() {
       k += 1;
       $('.quiz_text>p').html(q[k].describe).append(q[k].music);
