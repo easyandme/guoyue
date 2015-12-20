@@ -29,7 +29,7 @@ body div#start {
 img[alt="title"] {
   position: absolute;
   left: 50%;
-  margin-left: -20px;
+  margin-left: -25px;
 }
 .wrapper {
   width: 80%;
