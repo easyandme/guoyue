@@ -127,6 +127,7 @@ img[alt="title"] {
     margin: 20px auto auto;
     font-size: 1.15em;
     text-align: center;
+    padding: 0 10px;
 }
 .play_btn { 
   width: 50px;
