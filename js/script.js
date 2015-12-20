@@ -126,23 +126,23 @@ $('.choice').click(function() {
         quotient = '乐圣'
         middle = '竟有';
         pretext = "空前绝后！";
-        final_txt = "级别！你也来试试吧";
+        final_txt = "级别！不服来战！";
       } else if ( s > 60 && s < 100) { 
         perc = Math.floor(Math.random()*15) + 80;
         middle = '高达';
         quotient = '乐师'
-        final_txt = "级，你也来试试吧！"
+        final_txt = "级，不服来战！"
       } else if ( s > 30 && s <= 60) { 
         perc = Math.floor(Math.random()*30) + 50;
         middle = '已足够成为';
         quotient = '乐友'
-        final_txt = "，你也来试试吧！"
+        final_txt = "，不服来战！"
       } else if ( s >= 0 && s <= 30) { 
         pretext = '不意外！'
         perc = Math.floor(Math.random()*10) + 20;
         middle = '只有';
         quotient = '乐盲'
-        final_txt = "级...你也来试试吧！"
+        final_txt = "级...不服来战！"
       }  
         $('.percent').fadeIn(500);
         $('#final_perc').text(perc + '%');
@@ -214,10 +214,10 @@ $('.share').click(function() {
 
 $('.follow').click(function() { 
         addOverlay(); 
-        $('img[alt="QR"], img[alt="des"]').show();
+        $('img[alt="QR"], img[alt="des"],.share_txt_2').show();
         $('#overlay').click(function() {
             $(this).remove(); 
-            $('img[alt="QR"], img[alt="des"], .share_txt').hide();
+            $('img[alt="QR"], img[alt="des"], .share_txt_2').hide();
         });
 });
 });
