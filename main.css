@@ -157,7 +157,7 @@ img[alt="title"] {
     height: 50px;
     color: #000;
     border-radius: 11px;
-    background-color: #F7D784;
+    background-color: #FFEDBE;
     text-align: left;
     font-size: 1.25em;
     border-color: #fff;
@@ -171,10 +171,10 @@ img[alt="title"] {
     -ms-transition: background-color .5s linear;
 }
 #choiceB {
-  background-color: #F7D784;
+  background-color: #FFEDBE;
 }
 #choiceC { 
-  background-color: #F7D784;
+  background-color: #FFEDBE;
 }
 #choiceD {
   display: none;
