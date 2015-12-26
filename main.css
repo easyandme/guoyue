@@ -156,6 +156,7 @@ img[alt="title"] {
     width: 203px;
     height: 50px;
     color: #000;
+    outline: none;
     border-radius: 11px;
     background-color: #FFEDBE;
     text-align: left;
@@ -169,6 +170,10 @@ img[alt="title"] {
     -moz-transition: background-color .5s linear;
     -o-transition: background-color .5s linear;
     -ms-transition: background-color .5s linear;
+}
+.choice:active {
+    outline: none;
+    background-color: #FFEDBE;
 }
 #choiceB {
   background-color: #FFEDBE;
